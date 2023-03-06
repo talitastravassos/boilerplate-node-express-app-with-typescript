@@ -1,12 +1,23 @@
 import '@controllers/DummyController';
+import * as dotenv from 'dotenv';
 import express from 'express';
 
 const app = express();
 
-console.log('⚡ Server running ⚡');
+dotenv.config();
 
-app.get('/', (request, response) => {
-  return response.json({ message: 'Hello World' });
+const port = 3333;
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader(
+    'Access-Control-Allow-Methods',
+    'OPTIONS, GET, POST, PUT, PATCH, DELETE'
+  );
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
 });
 
-app.listen(3333);
+app.listen(port, () => {
+  console.log(`⚡ Server running on port ${port} ⚡`);
+});
