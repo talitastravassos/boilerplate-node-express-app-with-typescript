@@ -21,7 +21,7 @@
     "@babel/core": "^7.24.5",
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.23.5",
-    "@babel/preset-typescript": "^7.23.3",
+    "@babel/preset-typescript": "^7.24.7",
     "@babel/types": "^7.23.5",
     "@types/babel__template": "^7.4.4",
     "@types/express": "^4.17.21",
